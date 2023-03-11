@@ -15,12 +15,11 @@ public class SwaggerConfig {
 
 	@Bean
 	public Docket api() {
-		return new Docket(DocumentationType.SWAGGER_2)
-				.select().paths(PathSelectors.any())
-				.apis(RequestHandlerSelectors
-						.basePackage("com.bet.controller")).build();
-		
-		
-//		http://localhost:8080/swagger-ui.html
+		return new Docket(DocumentationType.SWAGGER_2).select().paths(PathSelectors.any())
+				.apis(RequestHandlerSelectors.basePackage("com.bet.controller")).build();
+
+		/*
+		 * http://localhost:8080/swagger-ui.html
+		 */
 	}
 }
