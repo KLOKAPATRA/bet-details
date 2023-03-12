@@ -24,7 +24,7 @@ public class BetController {
 	private BetService betService;
 
 	@RequestMapping("/savebets")
-	public String saveleads(@ModelAttribute("bet") Bet bet, Model model) {
+	public String saveLeads(@ModelAttribute("bet") Bet bet, Model model) {
 		betService.savelead(bet);
 		List<Bet> bets = betService.getallbets();
 		model.addAttribute("bets", bets);
@@ -32,14 +32,14 @@ public class BetController {
 	}
 
 	@RequestMapping("/listbets")
-	public String listbets(Model model) {
+	public String listBets(Model model) {
 		List<Bet> bets = betService.getallbets();
 		model.addAttribute("bets", bets);
 		return "listbets";
 	}
 
 	@RequestMapping("/delete")
-	public String Deletebets(@RequestParam("id") long id, Model model) {
+	public String DeleteBets(@RequestParam("id") long id, Model model) {
 		betService.deletebets(id);
 
 		List<Bet> bets = betService.getallbets();
@@ -48,7 +48,7 @@ public class BetController {
 	}
 
 	@RequestMapping("/update")
-	public String updatebets(@RequestParam("id") long id, Model model) {
+	public String updateBets(@RequestParam("id") long id, Model model) {
 		Bet bet = betService.updatebets(id);
 		model.addAttribute("bet", bet);
 		return "update";
